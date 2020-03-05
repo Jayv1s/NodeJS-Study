@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-study",
+  "version": "1.0.0",
+  "description": "Study project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JojiAbel/NodeJS-Study.git"
+  },
+  "author": "João Vitor de Souza Gonçalves",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JojiAbel/NodeJS-Study/issues"
+  },
+  "homepage": "https://github.com/JojiAbel/NodeJS-Study#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
