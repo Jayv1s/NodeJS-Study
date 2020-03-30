@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JojiAbel/NodeJS-Study.git"
+    "url": "git+https://github.com/Jayv1s/NodeJS-Study.git"
   },
-  "author": "João Vitor de Souza Gonçalves",
+  "author": "João Vitor de Souza Gonçalves (Jayv1s)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JojiAbel/NodeJS-Study/issues"
+    "url": "https://github.com/Jayv1s/NodeJS-Study/issues"
   },
-  "homepage": "https://github.com/JojiAbel/NodeJS-Study#readme",
+  "homepage": "https://github.com/Jayv1s/NodeJS-Study#readme",
   "devDependencies": {
     "nodemon": "^2.0.2"
   },
