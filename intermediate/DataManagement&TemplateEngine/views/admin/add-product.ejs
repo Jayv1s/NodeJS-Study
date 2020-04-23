@@ -1,9 +1,9 @@
-<%- include('includes/head.ejs') %> <!--If you render if equals sign (=) it'll render as text file-->
+<%- include('../includes/head.ejs') %> <!--If you render if equals sign (=) it'll render as text file-->
     <link rel="stylesheet" href="/css/product.css">
 </head>
 
 <body>
-    <%- include('includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
     <main>
         <form class="product-form" action="/admin/add-product" method="POST">
             <div class="form-control">
@@ -15,10 +15,13 @@
 
                 <label for="description">Description:</label>
                 <input type="text" name="description" id="description">
+
+                <label for="img">Image URL:</label>
+                <input type="text" name="img" id="img">
             </div>
 
             <button type="submit">Add Product</button>
         </form>
     </main>
 </body>    
-<%- include('includes/end.ejs') %>
+<%- include('../includes/end.ejs') %>

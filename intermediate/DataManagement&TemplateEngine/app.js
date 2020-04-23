@@ -1,7 +1,7 @@
 const path = require('path');
-
 const express = require('express');
 const bodyParser = require('body-parser');
+const { notFound } = require('./controllers/error');
 
 const app = express();
 
@@ -14,11 +14,9 @@ const shopRoutes = require('./routes/shop');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));//middleware para arquivos estaticos (css por exemplo)
 
-app.use('/admin', adminRoutes.routes); // since I change the way I'm importing, I need to change the way I recieve
+app.use('/admin', adminRoutes); // since I change the way I'm importing, I need to change the way I recieve
 app.use(shopRoutes);
 
-app.use((req, res, next) => {
-    res.status(404).render('404', { pageTitle: 'Page Not Found' }); //passing the file that I want to open (404) and page title to set then dynamically
-});
+app.use(notFound);
 
 app.listen(3000);
