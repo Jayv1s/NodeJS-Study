@@ -1,42 +1,40 @@
 const fs = require('fs');
 const path = require('path');
 
-const productPath = path.join(
-    path.dirname(process.mainModule.filename), 
-    'data', 
-    'products.json'
-)
+const p = path.join(
+  path.dirname(process.mainModule.filename),
+  'data',
+  'products.json'
+);
 
-const getProductsFromFile = (callback) => {
-    fs.readFile(productPath, (err, fileContent) => {
-        if(err) {
-            return callback([])
-        } else {
-            callback(JSON.parse(fileContent));
-        } 
-    })
-}
+const getProductsFromFile = cb => {
+  fs.readFile(p, (err, fileContent) => {
+    if (err) {
+      cb([]);
+    } else {
+      cb(JSON.parse(fileContent));
+    }
+  });
+};
 
 module.exports = class Product {
-    constructor(title, price, description, img) { //The constructor is responsible to initialize my class when I a call "Product = new Product()"
-        this.title = title; //this. is using to refer to the local proprieties of the class
-        this.price = price;
-        this.description = description;
-        this.img = img;
-    }
+  constructor(title, imageUrl, description, price) {
+    this.title = title;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.price = price;
+  }
 
-    //push to the array
-    save() {
-        getProductsFromFile(products => {
-            products.push(this);
-            fs.writeFile(productPath, JSON.stringify(products), (err) => {
-                console.error(err);
-            });
-        });
-    }
+  save() {
+    getProductsFromFile(products => {
+      products.push(this);
+      fs.writeFile(p, JSON.stringify(products), err => {
+        console.log(err);
+      });
+    });
+  }
 
-    // search/return my array
-    static  fetchAll(callback) { 
-        getProductsFromFile(callback);
-    }
-}
+  static fetchAll(cb) {
+    getProductsFromFile(cb);
+  }
+};
